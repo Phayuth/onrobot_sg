@@ -7,7 +7,7 @@ This package is written to work on ROS Melodic (Python 2.7). But with some modif
 
 
 ## Requirement
-pymodbus
+python package : pymodbus
 ```
 sudo pip install pymodbus==2.5.3
 ```
@@ -35,11 +35,11 @@ roslaunch onrobot_sg bringup_gripper.launch
 ```
 Control the gripper via rosservice, where desired width is between 110mm and 800 mm
 ```
-rosservice call /cmd_gripper "cmd_width = {desired width}"
+rosservice call /gripper_cmd "cmd_wd: desired_width"
 ```
 Control via client service
 ```
-rosrun onrobot_sg cmd_client.py
+rosrun onrobot_sg cmd_client.py desired_width
 ```
 
 

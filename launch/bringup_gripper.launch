@@ -1,0 +1,17 @@
+<launch>
+	<arg name="gripper_ip"            default="192.168.1.1"/>
+	<arg name="gripper_port"          default="502"/>
+	<arg name="gripper_model_id"      default="3"/>  <!-- for mdoel a-H = 2 , a-S = 3 , b-H = 4 -->
+	<arg name="gripper_gentle"        default="true"/>
+
+	<param name="/gripper/ip"         value="$(arg gripper_ip)" />
+	<param name="/gripper/port"       value="$(arg gripper_port)" />
+	<param name="/gripper/model_id"   value="$(arg gripper_model_id)" />
+	<param name="/gripper/gentle"     value="$(arg gripper_gentle)" />
+
+	<node name="OnRobot_SG"
+		pkg="onrobot_sg"
+		type="cmd_server.py"
+		output="screen"/>
+
+</launch>

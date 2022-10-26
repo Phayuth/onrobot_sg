@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="sg-b">
+    <material name="blue">
+      <color rgba="0.0 0.0 0.8 1.0"/>
+    </material>
+  
+    <material name="green">
+      <color rgba="0.0 0.8 0.0 1.0"/>
+    </material>
+
+    <link name="gripper">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="gripper">
+        <origin xyz="0.0075 0.0055 0 " rpy="3.1415 -1.5708 0"/>
+        <geometry>
+          <mesh filename="package://onrobot_sg/urdf/onrobot_sg_b/meshes/SG-b_v1.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="blue"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.10" radius="0.049"/>  <!-- Still doesn't cover full gripper length, but we need to dip and cover objects to grasp, so left some room-->
+        </geometry>
+      </collision>
+    </link>
+  </robot>
